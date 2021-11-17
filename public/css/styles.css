@@ -1,0 +1,71 @@
+body {
+    background-color: #1a202c;
+    color: white;
+}
+
+.shesh {
+    background-color: darkred;
+    color: white;
+    width: 20%;
+    font-family: Arial;
+}
+
+.sheshh {
+    background-color: blue;
+    color: white;
+    font-family: Arial;
+}
+.modal {
+    background-color: mediumslateblue;
+    border-radius: 10px;
+    border: 2px solid darkblue;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+    color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: mediumslateblue;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid red;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+.weeks{
+    background-color: mediumslateblue;
+    border-radius: 10px;
+    border: 2px solid darkblue;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+    color: black;
+}
+.week{
+    background-color: darkslateblue;
+    border-radius: 10px;
+    border: 2px solid darkblue;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+    color: white;
+}
