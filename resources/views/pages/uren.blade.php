@@ -1,4 +1,3 @@
-
 @include('layouts.master')
 
 {{--<link href="{{ asset('css/styles.css') }}" rel="stylesheet">--}}
@@ -9,55 +8,67 @@
 
 <link href="{{ asset('js/modal.js') }}" rel="script">
 <script type="text/javascript" src="{{asset('js/modal.js') }}"></script>
-
-
 {{--model--}}
-<div class="text-center card-header"><h2>Uren Project IAgroup.app</h2>
-    <button class="btn-success" id="myBtn">Voeg een datum en tijd toe!</button></div>
+<div class="text-center card-header">
+    <div class="navbar">
+        <li><a href="">Jamiro Aliet</a></li>
+        <li><a href="Contact">Contact</a></li>
+        <li><a href="uren">Hours</a></li>
+    </div>
+</div>
+<div class="text-center card-header">
+    <h2>Uren Project IAgroup.app</h2>
+    <button class="btn-success" id="myBtn">Voeg een datum en tijd toe!</button>
+</div>
 
 @include('pages.includes.urenmodel')
 <br>
 @foreach($weeknummer as $weeknummers)
     <div class="weeks">
-       <h1 class="text-center"> Week: {{$weeknummers->weeknummer}}</h1>
+        <h1 class="text-center"> Week: {{$weeknummers->weeknummer}}</h1>
+
         @foreach($uren as $uurtjes)
-            @if($uurtjes->weeknummer == $weeknummers->weeknummer)
-                <div class="week">
-                    <div class="row m-2">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label class="text">Tijd</label>
-                                <div>{{$uurtjes->time}}</div>
+            @if($uurtjes->weeknummer == $weeknummers->weeknummer )
+                <button type="button" class="collapsible">Open Section 1</button>
+                <div class="content">
+                    <div class="week">
+                        <div class="row m-2">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="text">Tijd</label>
+                                    <div>{{$uurtjes->time}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Datum</label>
-                                <div>{{$uurtjes->date}}</div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label>Datum</label>
+                                    <div>{{$uurtjes->date}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Description</label>
-                                <div>{{$uurtjes->description}}</div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <div>{{$uurtjes->description}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <form method="post" action="uren/{{$uurtjes->id}}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger float-right">
-                                        Delete
-                                    </button>
-                                </form>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <form method="post" action="uren/{{$uurtjes->id}}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger float-right">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    @else
+                        <div>No info</div>
+                    @endif
                 </div>
-
-            @endif
-        @endforeach
+                @endforeach
     </div>
 @endforeach
 
@@ -86,6 +97,20 @@
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
     }
 </script>
 
