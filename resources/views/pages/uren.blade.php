@@ -29,8 +29,7 @@
 
         @foreach($uren as $uurtjes)
             @if($uurtjes->weeknummer == $weeknummers->weeknummer )
-                <button type="button" class="collapsible">Open Section 1</button>
-                <div class="content">
+
                     <div class="week">
                         <div class="row m-2">
                             <div class="col-lg-3">
@@ -64,10 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    @else
-                        <div>No info</div>
-                    @endif
-                </div>
+@endif
                 @endforeach
     </div>
 @endforeach

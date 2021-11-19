@@ -70,7 +70,7 @@ body {
     color: white;
 }
 .collapsible {
-    background-color: #777;
+    background-color: mediumpurple;
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -82,14 +82,14 @@ body {
 }
 
 .active, .collapsible:hover {
-    background-color: #555;
+    background-color: rebeccapurple;
 }
 
 .content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: rebeccapurple;
 }
 .navbar{
     font-size: 40px;
